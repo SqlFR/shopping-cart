@@ -41,10 +41,16 @@ const CardProduct = ( {id} ) => {
   if (loading) return <p>Loading...</p>
 
   return (
-    <>
-      <p>{title}, {category}, {price}</p>
-      <img src={image} />
-    </>
+    <div className="border border-black rounded-xl w-60">
+      <div className="p-5">
+        <img src={image} />
+      </div>
+      <div className="bg-gray-200 rounded-b-xl p-2">
+      <p>{title}</p>
+      <p className="my-2 text-sm text-sky-700">{category}</p>
+      <p className="text-green-900">$ {price}</p>
+      </div>
+    </div>
   )
 }
 
