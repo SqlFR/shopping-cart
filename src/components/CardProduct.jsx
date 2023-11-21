@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-const useProductInfos = ( {id} ) => {
+const useProductInfos = ( {choiceArticle} ) => {
   const [title, setTitle] = useState(null);
   const [category, setCategory] = useState(null);
   const [price, setPrice] = useState(null);
@@ -9,7 +9,7 @@ const useProductInfos = ( {id} ) => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch(`https://fakestoreapi.com/products/${id}`)
+    fetch(`https://fakestoreapi.com/products/${choiceArticle}`)
             .then(response => {
               if (response.status >= 400) {
                 throw new Error("Server error...");
@@ -29,13 +29,13 @@ const useProductInfos = ( {id} ) => {
   return { title, category, price, image, error, loading };
 };
 
-const CardProduct = ( {id} ) => {
+const CardProduct = ( {choiceArticle} ) => {
   const { title,
           category,
           price,
           image, 
           error, 
-          loading } = useProductInfos( {id} );
+          loading } = useProductInfos( {choiceArticle} );
 
   if (error) return <p>A network error was encoutered</p>;
   if (loading) return <p>Loading...</p>
