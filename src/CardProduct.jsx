@@ -45,7 +45,7 @@ const CardProduct = ( {id} ) => {
       <div className="p-5">
         <img src={image} />
       </div>
-      <div className="bg-gray-200 rounded-b-xl p-2">ffgg
+      <div className="bg-gray-200 rounded-b-xl p-2">
       <p>{title}</p>
       <p className="my-2 text-sm text-sky-700">{category}</p>
       <p className="text-green-900">$ {price}</p>
