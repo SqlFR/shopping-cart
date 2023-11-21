@@ -1,5 +1,9 @@
-function Cart() {
-  return <p>Cart page</p>
+import Header from "./components/Header";
+
+const Cart = () => {
+  return (
+    <Header />
+    )
 }
 
 export default Cart;
