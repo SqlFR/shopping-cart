@@ -1,14 +1,21 @@
-import CardProduct from "./components/CardProduct";
+import ProductCategory from "../data";
 
-const menClothingCategorie = "men's clothing";
-const womanClothingCategorie = "women's clothing";
-const electronicClothingCategorie = "electronics";
-const jeweleryClothingCategorie = "jewelery";
+const Gallery = ({ category }) => {
 
-const Gallery = () => {
+  const allCategories = ["men's clothing", "women's clothing", "electronics", "jewelery"];
+  let allCat = false
+  if(category === 'all') {
+    allCat = true;
+  } 
+
+
+
   return (
-    <>
-    </>
+    <div className="p-4">
+      {allCat ? (allCategories.map((category) => (
+         <ProductCategory key={category} category={category}/>)))
+              : (<ProductCategory key={category} category={category}/>)}      
+    </div>
   )
 }
 

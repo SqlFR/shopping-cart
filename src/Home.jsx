@@ -1,11 +1,11 @@
-import { Link } from "react-router-dom";
+import ProductCategory from "./data";
 
 import Header from "./components/Header";
 
 function Home() {
   return (
     <div>
-      <Header />      
+      <Header />
     </div>
   )
 }
